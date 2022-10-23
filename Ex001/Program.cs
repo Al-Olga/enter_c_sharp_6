@@ -18,6 +18,6 @@ else if (k1==k2) Console.WriteLine("прямые параллельны");
 else 
 {
     float x = (b2-b1)/(k1-k2);
-    float y = (k1*x+b1);
+    float y = k1*x+b1;
     Console.WriteLine($"прямые пересекаются в точке с координатами [{x},{y}]");
 }
