@@ -1,14 +1,25 @@
 ﻿// Показать числа Фибоначчи
 
-int Fibonachi (int number)
+int Fibonachi2(int n)
 {
-    if (number==1 || number==2) return 1;
-    else
-        return Fibonachi(number-1)+Fibonachi(number-2);
+    int number=0;
+    int sled=1;
+    int tmp;
+ 
+    for (int i=0; i<n; i++)
+    {
+        tmp=number;
+        number=sled;
+        sled=sled+tmp;
+    }
+ 
+    return number;
 }
+
 
 Console.Write("Введите предельное число для вывода ряда Фибоначи: ");
 int n = int.Parse(Console.ReadLine() ?? "0");
 
-for (int i=1; i<=n; i++)
-    Console.WriteLine($"f({i}): {Fibonachi(i)}");
+Console.WriteLine("Ряд Фибоначчи: ");
+for (int j=1; j<=n; j++)
+    Console.WriteLine($"f({j}): {Fibonachi2(j)}");
